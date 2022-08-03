@@ -105,9 +105,9 @@
   "ts-node": {
     "files": true,
   },
-  "paths": {
-    "@modules/*": ["modules/*"],
-    "@shared/*": ["shared/*"],
-    "@services/*": ["services/*"]
-  },
+  // "paths": {
+  //   "@modules/*": ["modules/*"],
+  //   "@shared/*": ["shared/*"],
+  //   "@services/*": ["services/*"]
+  // },
 }
