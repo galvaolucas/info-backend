@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import 'reflect-metadata';
 import { AppDataSource } from './data-source';
 import routes from './shared/http';
@@ -6,6 +7,8 @@ import './shared/container';
 
 AppDataSource.initialize().then(() => {
     const app = express();
+
+    app.use(cors());
 
     app.use(express.json());
 
