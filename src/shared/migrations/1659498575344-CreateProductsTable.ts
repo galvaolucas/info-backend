@@ -32,6 +32,18 @@ export class CreateProductsTable1659498575344 implements MigrationInterface {
                   scale: 2,
                 },
                 {
+                  name: 'parcel',
+                  type: 'decimal',
+                  precision: 5,
+                  scale: 2,
+                },
+                {
+                  name: 'parcel_price',
+                  type: 'decimal',
+                  precision: 8,
+                  scale: 2,
+                },
+                {
                   name: 'created_at',
                   type: 'timestamp',
                   default: 'now()',

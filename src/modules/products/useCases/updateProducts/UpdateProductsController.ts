@@ -10,6 +10,8 @@ export default class UpdateProductsController {
       description,
       price,
       discount,
+      parcel,
+      parcel_price,
     } = request.body;
 
     const updateProductsUseCase = container.resolve(UpdateProductsUseCase);
@@ -18,6 +20,8 @@ export default class UpdateProductsController {
       description,
       price,
       discount,
+      parcel,
+      parcel_price,
     });
 
     return response.json(Products);

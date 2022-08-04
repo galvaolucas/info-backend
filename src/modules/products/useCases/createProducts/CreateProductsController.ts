@@ -9,6 +9,8 @@ export default class CreateProductController {
       description,
       price,
       discount,
+      parcel,
+      parcel_price,
     } = request.body;
 
     const createProductUseCase = container.resolve(CreateProductsUseCase);
@@ -17,6 +19,8 @@ export default class CreateProductController {
       description,
       price,
       discount,
+      parcel,
+      parcel_price,
     });
 
     return response.json(product);

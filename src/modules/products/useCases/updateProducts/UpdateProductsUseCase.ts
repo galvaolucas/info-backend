@@ -7,6 +7,8 @@ interface IRequest {
   description: string;
   price: number;
   discount: number;
+  parcel: number;
+  parcel_price: number;
 }
 
 @injectable()
@@ -22,6 +24,8 @@ class UpdateProductsUseCase {
       description,
       price,
       discount,
+      parcel,
+      parcel_price,
     }: IRequest,
   ): Promise<Products | null> {
     const checkfProductExists = await this.productsRepository.findById(id);
@@ -34,6 +38,8 @@ class UpdateProductsUseCase {
       description,
       price,
       discount,
+      parcel,
+      parcel_price,
     });
 
     return updatedProduct;
