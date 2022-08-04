@@ -19,38 +19,35 @@ class ProductsRepository implements IProductsRepository {
     return products;
   }
 
-  // async update(
-  //   id: string,
-  //   plansData: ICreatePlansDTO,
-  // ): Promise<Plans | null> {
-  //   await this.ormRepository.update(id, plansData);
+  async update(
+    id: string,
+    productsData: ICreateProductsDTO,
+  ): Promise<Products | null> {
+   await this.ormRepository.update(id, productsData);
+  
+   const product = await this.ormRepository.findOneBy({id});
 
-  //   const plans = await this.ormRepository.findOneBy({id});
+    return product;
+  }
 
-  //   return plans;
-  // }
+  async list(): Promise<Products[]> {
+    const products = await this.ormRepository.find({
+      order: {
+        price: 'ASC',
+      },
+    });
+    return products;
+  }
 
-  // async list(query: IPlansQuery): Promise<Plans[]> {
-  //   let whereClause: any = {};
+  async findById(id: string): Promise<Products> {
+    const product = await this.ormRepository.findOneBy({id});
 
-  //   if (query.currency !== undefined) {
-  //     whereClause.currency = query.currency;
-  //   }
+    if(!product) {
+      console.log('No product was found!')
+    }
 
-  //   if (query.is_active !== undefined) {
-  //     if (query.is_active === 'true') {
-  //       whereClause.is_active = true;
-  //     }
-  //   }
-
-  //   const queryPlans = await this.ormRepository.find({
-  //     where: whereClause,
-  //     order: {
-  //       price: 'ASC',
-  //     },
-  //   });
-  //   return queryPlans;
-  // }
+    return product;
+  }
 
   async delete(id: string): Promise<void> {
     await this.ormRepository.delete(id);

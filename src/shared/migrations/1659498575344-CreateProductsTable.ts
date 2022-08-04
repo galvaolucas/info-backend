@@ -22,13 +22,13 @@ export class CreateProductsTable1659498575344 implements MigrationInterface {
                 {
                   name: 'price',
                   type: 'decimal',
-                  precision: 5,
+                  precision: 8,
                   scale: 2,
                 },
                 {
                   name: 'discount',
                   type: 'decimal',
-                  precision: 5,
+                  precision: 8,
                   scale: 2,
                 },
                 {
@@ -49,5 +49,4 @@ export class CreateProductsTable1659498575344 implements MigrationInterface {
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropTable('products');
     }
-
 }

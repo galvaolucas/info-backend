@@ -6,9 +6,7 @@ interface IRequest {
   description: string;
   price: number;
   discount: number;
-  image: string;
 }
-
 @injectable()
 class CreateProductsUseCase {
   constructor(
@@ -20,14 +18,12 @@ class CreateProductsUseCase {
     description,
     price,
     discount,
-    image,
   }: IRequest): Promise<Products> {
   
     const products = await this.productsRepository.create({
       description,
       price,
       discount,
-      image,
     });
 
     return products;
