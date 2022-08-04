@@ -12,9 +12,9 @@ export const AppDataSource = new DataSource ({
     //     rejectUnauthorized: false,
     // },
     entities: [
-        `./src/modules/**/infra/typeorm/entities/*.ts`
+        `./src/modules/**/infra/typeorm/entities/*.js`
     ],
     migrations: [
-        `./src/shared/migrations/*.ts`
+        `./src/shared/migrations/*.js`
     ],
 });
