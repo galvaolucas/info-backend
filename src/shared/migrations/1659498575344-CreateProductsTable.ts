@@ -40,8 +40,7 @@ export class CreateProductsTable1659498575344 implements MigrationInterface {
                 {
                   name: 'parcel_price',
                   type: 'decimal',
-                  precision: 8,
-                  scale: 2,
+                  precision: 3,
                 },
                 {
                   name: 'created_at',
