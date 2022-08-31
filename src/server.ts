@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import 'reflect-metadata';
 import { AppDataSource } from './data-source';
-import routes from './shared/http';
+import routes from './shared/http/routes';
 import './shared/container';
 
 AppDataSource.initialize().then(() => {

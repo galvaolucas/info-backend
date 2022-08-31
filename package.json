@@ -1,13 +1,15 @@
 {
-  "name": "B8One",
+  "name": "InfoSistemas",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
+    "start":"yarn migration:up && yarn dev",
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "start": "node ./dist/server.js",
+    "start:prod": "node ./dist/server.js",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js -d src/data-source.ts",
+    "migration:up": "yarn typeorm migration:run",
     "typeorm:migrations": "ts-node-dev ./node_modules/typeorm/cli.js"
   },
   "dependencies": {
