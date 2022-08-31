@@ -1,4 +1,4 @@
-# b8one-backend-challenge
+# InfoSistemas-backend-challenge
 
 #API created using node js, typeorm (latest) and express.
 
