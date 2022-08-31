@@ -7,23 +7,25 @@ export default class UpdateCarController {
   async handle(request: Request, response: Response): Promise<Response> {
     const { id } = request.params;
     const {
-      description,
-      price,
-      discount,
-      parcel,
-      parcel_price,
+      plate,
+      chassis,
+      renavam,
+      model,
+      brand,
+      year,
     } = request.body;
 
     const updateCarUseCase = container.resolve(UpdateCarUseCase);
 
-    const Car = await updateCarUseCase.execute(id, {
-      description,
-      price,
-      discount,
-      parcel,
-      parcel_price,
+    const car = await updateCarUseCase.execute(id, {
+      plate,
+      chassis,
+      renavam,
+      model,
+      brand,
+      year,
     });
 
-    return response.json(Car);
+    return response.json(car);
   }
 }
