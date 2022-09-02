@@ -1,4 +1,4 @@
-export default interface ICreateProductsDTO {
+export default interface ICreateCarsDTO {
   plate: string;
   chassis: string;
   renavam: string;

@@ -33,11 +33,11 @@ class UpdateCarUseCase {
   ): Promise<Car | null> {
     const checkIfCarExists = await this.carsRepository.findById(id);
 
-    if(checkIfCarExists) {
+    if(!checkIfCarExists) {
       console.log('Wasn"t possible to find the car!');
     }
 
-    const updatedProduct = await this.carsRepository.update(id, {
+    const updatedCar = await this.carsRepository.update(id, {
       plate,
       chassis,
       renavam,
@@ -46,7 +46,7 @@ class UpdateCarUseCase {
       year,
     });
 
-    return updatedProduct;
+    return updatedCar;
   }
 }
 
