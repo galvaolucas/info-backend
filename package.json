@@ -11,7 +11,7 @@
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js -d src/data-source.ts",
     "migration:up": "yarn typeorm migration:run",
     "typeorm:migrations": "ts-node-dev ./node_modules/typeorm/cli.js",
-    "start": "yarn migration:up:prod && node ./dist/shared/server.js",
+    "start": "yarn migration:up:prod && node ./dist/server.js",
     "typeorm:prod": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm -d ./dist/data-source.js",
     "migration:up:prod": "yarn typeorm:prod migration:run"
   },
