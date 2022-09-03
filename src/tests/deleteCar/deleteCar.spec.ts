@@ -6,8 +6,9 @@ import app from '../../server';
 chai.use(chaiHttp);
 chai.should();
 
-describe(('POST api/cars'), () => {
-    it(('It should be possible to create a car'), (done) => {
+describe(('DELETE api/cars'), () => {
+
+    it(('It should be possible to delete one car'), async () => {
 
         let car = new Car();
         
@@ -17,21 +18,12 @@ describe(('POST api/cars'), () => {
         car.year = 2021,
         car.renavam = '886236123182',
         car.chassis = '2381273182312801',
-
+        
        chai.request(app)
-       .post('/cars')
-       .send({car})
-       .set('Accept','application/json')
-       .end((error,response) => {
-        try {
+       .delete(`/cars/${car}`)
+       .end((response) => {
             response.should.have.status(200);
-            response.body.should.be.a('object');
             response.should.be.a('json');
-        } catch (err) {
-            console.log(error);
-        }
        })
-
-       return done();
     })
 })

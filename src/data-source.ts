@@ -8,6 +8,12 @@ export const AppDataSource = new DataSource ({
     username: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
+    // entities: [
+    //     `src/modules/**/infra/typeorm/entities/*.ts`
+    // ],
+    // migrations: [
+    //     `src/shared/typeorm/migrations/*.ts`
+    // ],
     ssl: {
         rejectUnauthorized: false,
     },

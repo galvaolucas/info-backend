@@ -6,12 +6,12 @@ import app from '../../server';
 chai.use(chaiHttp);
 chai.should();
 
-describe(('POST api/cars'), () => {
-    it(('It should be possible to create a car'), (done) => {
+describe(('PUT api/cars'), () => {
+    it(('It should be update to updarte a car'), (done) => {
 
         let car = new Car();
         
-        car.brand = 'Audi',
+        car.brand = 'Audi Updated',
         car.model = 'A3',
         car.plate = 'JHG-6576',
         car.year = 2021,
@@ -19,7 +19,7 @@ describe(('POST api/cars'), () => {
         car.chassis = '2381273182312801',
 
        chai.request(app)
-       .post('/cars')
+       .put(`/cars/${car}`)
        .send({car})
        .set('Accept','application/json')
        .end((error,response) => {
