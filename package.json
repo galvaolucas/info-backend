@@ -5,13 +5,13 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "start": "yarn migration:up && yarn dev && yarn test",
+    "start:dev": "yarn migration:up && yarn dev && yarn test",
     "test": "mocha --check-leaks -r tsconfig-paths/register -r ts-node/register \"src/tests/**/*.spec.ts\"",
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js -d src/data-source.ts",
     "migration:up": "yarn typeorm migration:run",
     "typeorm:migrations": "ts-node-dev ./node_modules/typeorm/cli.js",
-    "start:prod": "yarn migration:up:prod && node ./dist/shared/server.js",
+    "start": "yarn migration:up:prod && node ./dist/shared/server.js",
     "typeorm:prod": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm -d dist/shared/ormconfig.js",
     "migration:up:prod": "yarn typeorm:prod migration:run"
   },
