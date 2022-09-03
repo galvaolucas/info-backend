@@ -27,7 +27,7 @@ services:
     depends_on:
       - postgres14-info
     command: >
-      sh -c "yarn start"
+      sh -c "yarn start:prod"
 
   postgres14-info:
     container_name: ${DB_HOST}
