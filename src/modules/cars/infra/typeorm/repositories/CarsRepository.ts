@@ -31,7 +31,11 @@ class CarsRepository implements ICarsRepository {
   }
 
   async list(): Promise<Car[]> {
-    const cars = await this.ormRepository.find()
+    const cars = await this.ormRepository.find({
+      order: {
+        brand: 'ASC',
+      }
+    })
     
     return cars;
   }
