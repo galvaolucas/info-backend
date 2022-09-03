@@ -15,6 +15,6 @@ export const AppDataSource = new DataSource ({
         `./dist/modules/**/infra/typeorm/entities/*.js`
     ],
     migrations: [
-        `./dist/shared/migrations/*.js`
+        `./dist/shared/typeorm/migrations/*.js`
     ],
 });
